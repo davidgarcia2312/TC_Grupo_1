@@ -22,10 +22,6 @@ Incluye funciones para:
 
 ---
 
-## 🚀 Objetivos del repositorio
-
-- Recoger cada trabajo grupal de los **Team Challenges**
-- Construir una librería de utilidades útil para nuestras prácticas
-- Desarrollar hábitos de trabajo colaborativo y documentación clara
+Más adelante añadiremos nuevos trabajos conforme avancemos en los siguientes retos del bootcamp.
 
 ¡Gracias por visitarnos! 🙂
