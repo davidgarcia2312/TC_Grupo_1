@@ -14,7 +14,7 @@ def describe_df(df : pd.DataFrame):
 
     Argumentos
     ----------
-    `df` : pandas.DataFrame
+    `df` : pandas.DataFrame\\
         El DataFrame de entrada cuyas columnas vamos a analizar.
 
     Retorna
@@ -59,11 +59,11 @@ def tipifica_variables(df : pd.DataFrame, umbral_categoria : int = 10, umbral_co
 
     Argumentos
     ----------
-    `df` : pandas.DataFrame
+    `df` : pandas.DataFrame\\
         El DataFrame de entrada cuyas variables vamos a clasificar.
-    `umbral_categoria` : int, default=10
+    `umbral_categoria` : int, default=10\\
         Máximo número de valores únicos para considerar una variable como categórica.
-    `umbral_continua` : float, default=20
+    `umbral_continua` : float, default=20\\
         Porcentaje de cardinalidad a partir del cual consideramos una variable como numérica continua.
 
     Retorna
@@ -119,13 +119,19 @@ def get_features_num_regression(df, target_col, umbral_corr, pvalue=None):
     Esta versión usa la matriz de correlación de pandas y no calcula el p-valor.
     Si se indica 'pvalue', se muestra un aviso de que no se está usando.
     
-    Argumentos:
-    df (pd.DataFrame): DataFrame con los datos.
-    target_col (str): Columna objetivo (target) del modelo de regresión.
-    umbral_corr (float): Valor entre 0 y 1 para el umbral de correlación.
-    pvalue (float, opcional): No se usa en esta versión. Solo incluido para compatibilidad.
+    Argumentos
+    ----------
+    `df` (pd.DataFrame):\\
+        DataFrame con los datos.
+    `target_col` (str):\\
+        Columna objetivo (target) del modelo de regresión.
+    `umbral_corr` (float):\\
+        Valor entre 0 y 1 para el umbral de correlación.
+    `pvalue` (float, opcional):\\
+        No se usa en esta versión. Solo incluido para compatibilidad.
 
     Retorna:
+    ----------
     lista or None: Lista con nombres de columnas numéricas que cumplen el umbral, o None si hay errores.
     """
 
@@ -174,6 +180,7 @@ def plot_features_num_regression(df, target_col="", columns=[], umbral_corr=0.0,
     en grupos de hasta 5 columnas (incluyendo siempre la variable target).
     
     Argumentos:
+    ----------
     df (pd.DataFrame): DataFrame con los datos.
     target_col (str): Nombre de la variable objetivo (target).
     columns (list, opcional): Lista de nombres de columnas a considerar (por defecto, se usan todas las numéricas).
@@ -181,6 +188,7 @@ def plot_features_num_regression(df, target_col="", columns=[], umbral_corr=0.0,
     pvalue (float, opcional): Nivel de significación estadística. Si se proporciona, se usa test de Pearson.
 
     Retorna:
+    ----------
     lista or None: Lista de columnas que cumplen con los criterios o None si hay error.
     """
 
@@ -241,18 +249,20 @@ def plot_features_num_regression(df, target_col="", columns=[], umbral_corr=0.0,
 
 
 def get_features_cat_regression(df, target_col, pvalue=0.05):
-    """"
+    """
     Identifica columnas categóricas significativamente asociadas con una variable numérica con alta cardinalidad.
     Esta función evalúa la relación entre variables categóricas y una variable objetivo mediante pruebas estadísticas:
     - Prueba t de Student si hay 2 categorías.
     - ANOVA de un factor si hay más de 2 categorías.
 
     Argumentos:
+    ----------
     df (pandas.DataFrame): DataFrame con los datos.
     target_col (str): El nombre de la columna objetivo que se desea predecir.
     pvalue (float, opcional (default=0.05)): Umbral de significación estadística. Solo se seleccionan variables categóricas cuyo p-valor sea menor a este valor.
 
     Retorna: lista or None
+    ----------
     Lista de nombres de columnas categóricas que muestran una diferencia estadísticamente significativa en el target_col. 
     None si hay errores o si no se encuentra ninguna.
     """ 
