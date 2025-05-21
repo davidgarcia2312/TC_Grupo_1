@@ -4,7 +4,7 @@ Bienvenido al repositorio de prácticas grupales de Machine Learning realizadas 
 
 - **David**
 - **Emma**
-- **María José**
+- **MJ**
 
 Este espacio está dedicado a recoger los proyectos colaborativos que vamos desarrollando a lo largo del bootcamp, con el objetivo de documentar nuestras soluciones, aprender en equipo y dejar constancia de nuestro progreso.
 
