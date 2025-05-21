@@ -24,4 +24,4 @@ Incluye funciones para:
 
 Más adelante añadiremos nuevos trabajos conforme avancemos en los siguientes retos del bootcamp.
 
-¡Gracias por visitarnos! 🙂
+¡Gracias por visitarnos!
