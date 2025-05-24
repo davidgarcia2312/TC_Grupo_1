@@ -261,10 +261,11 @@ def get_features_cat_regression(df, target_col, pvalue=0.05):
     target_col (str): El nombre de la columna objetivo que se desea predecir.
     pvalue (float, opcional (default=0.05)): Umbral de significación estadística. Solo se seleccionan variables categóricas cuyo p-valor sea menor a este valor.
 
-    Retorna: lista or None
+    Retorna: 
     ----------
-    Lista de nombres de columnas categóricas que muestran una diferencia estadísticamente significativa en el target_col. 
-    None si hay errores o si no se encuentra ninguna.
+    Lista or None
+    - Lista de nombres de columnas categóricas que muestran una diferencia estadísticamente significativa en el target_col. 
+    - None si hay errores o si no se encuentra ninguna.
     """ 
 
     # Comprobaciones de entrada
@@ -319,7 +320,7 @@ def get_features_cat_regression(df, target_col, pvalue=0.05):
                 lista_categoricas.append(col)
         
         except Exception as e:
-            print("Error")
+            print(f"Error: {e}")
             continue
 
     return lista_categoricas
@@ -331,15 +332,18 @@ def plot_features_regression(df, target_col="", columns=[], pvalue=0.05, with_in
     Y devuelve la lista de columnas cuya relación con target_col es estadísticamente significativa.
 
     Argumentos:
+    ----------
     df (pd.DataFrame): DataFrame con los datos.
     target_col (str): Nombre de la variable objetivo (target).
     columns (list, opcional): Lista de nombres de columnas a considerar (por defecto, se usan todas las numéricas).
     pvalue (float, opcional): Nivel de significación estadística.
     with_individual_plot (bool, opcional (default=False)): Si es True, muestra los histogramas por variable significativa.
 
-    Retorna: lista or None
-    Lista de columnas cuya relación con target_col es estadísticamente significativa.
-    None si hay errores o si no se encuentra ninguna.
+    Retorna:
+    ----------
+    Lista or None
+    - Lista de columnas cuya relación con target_col es estadísticamente significativa.
+    - None si hay errores o si no se encuentra ninguna.
     """
     
     # Comprobaciones de entrada
@@ -420,7 +424,7 @@ def plot_features_regression(df, target_col="", columns=[], pvalue=0.05, with_in
                     
 
         except Exception as e:
-            print("Error")
+            print(f"Error: {e}")
             continue
 
     return lista_columnas
