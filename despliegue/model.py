@@ -19,10 +19,9 @@ X_train, X_test, y_train, y_test = train_test_split(X,
                                                     test_size = 0.20,
                                                     random_state=42)
 
-model = RandomForestRegressor(max_depth=20, max_features=None, n_estimators=1000, random_state=42)
-model.fit(X_train, y_train)
+model = RandomForestRegressor(max_depth=20, max_features='sqrt', n_estimators=200, random_state=42)
 
-model.fit(data.drop(columns = ["quality"]), data["quality"]) #entrenamos con todos los datos
+model.fit(X, y) #entrenamos con todos los datos
 
 with open('ad_model.pkl', 'wb') as f:
     pickle.dump(model, f)

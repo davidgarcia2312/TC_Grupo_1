@@ -18,7 +18,7 @@ def hello():
     return render_template('index.html')
 
 # Predict
-@app.route('/api/v1/predict', methods=['POST'])
+@app.route('/api/v1/predict', methods=['GET'])
 def predict():
     with open('ad_model.pkl', 'rb') as f:
         model = pickle.load(f)
