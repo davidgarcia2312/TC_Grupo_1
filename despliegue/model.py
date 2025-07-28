@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
-from sklearn.ensemble import RandomForestRegressor
+from xgboost import XGBRegressor
 import pickle
 import os
 import joblib
@@ -19,7 +19,8 @@ X_train, X_test, y_train, y_test = train_test_split(X,
                                                     test_size = 0.20,
                                                     random_state=42)
 
-model = RandomForestRegressor(max_depth=20, max_features='sqrt', n_estimators=200, random_state=42)
+model = XGBRegressor(max_depth=10, learning_rate=0.1, n_estimators=1000, random_state=42)
+
 
 model.fit(X, y) #entrenamos con todos los datos
 
