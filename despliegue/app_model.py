@@ -65,6 +65,10 @@ def retrain():
     else:
         return f"<h2>New data for retrain NOT FOUND. Nothing done!</h2>"
 
+#Redeploy
+@app.route("/ping", methods=["GET"])
+def ping():
+    return {"mensaje": "API funcionando correctamente. Versión 1.0"}
 
 if __name__ == '__main__':
     app.run(debug=True)
